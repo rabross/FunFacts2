@@ -1,6 +1,7 @@
 package com.teamtreehouse.funfacts;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,5 +47,11 @@ public class FunFactsActivity extends Activity {
         int color = mColorWheel.getColor();
         mRelativeLayout.setBackgroundColor(color);
         mShowFactButton.setTextColor(color);
+
+        // The setStatusBarColor is only available in Lollipop and newer
+        // so we can do a check to only run this on >= Lollipop devices
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(color);
+        }
     }
 }
