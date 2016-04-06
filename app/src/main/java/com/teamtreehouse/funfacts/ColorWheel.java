@@ -1,11 +1,8 @@
 package com.teamtreehouse.funfacts;
 
 import android.content.Context;
-import android.graphics.Color;
 
-import java.util.Random;
-
-public class ColorWheel {
+public class ColorWheel extends RandomSelector {
 
     private final int[] mColors;
 
@@ -15,13 +12,10 @@ public class ColorWheel {
         mColors = context.getResources().getIntArray(R.array.colors);
     }
 
-    // Method (abilities: things the object can do)
-    public int getColor() {
-
-        // Randomly select a fact
-        Random randomGenerator = new Random(); // Construct a new Random number generator
-        int randomNumber = randomGenerator.nextInt(mColors.length);
-
-        return mColors[randomNumber];
+    @Override
+    public Integer get() {
+        // Randomly select a color
+        // Minimised code
+        return mColors[getRandomInt(mColors.length)];
     }
 }

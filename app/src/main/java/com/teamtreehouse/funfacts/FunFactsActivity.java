@@ -3,6 +3,7 @@ package com.teamtreehouse.funfacts;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 
 public class FunFactsActivity extends Activity {
+
+    public static final String TAG = FunFactsActivity.class.getSimpleName();
 
     private TextView mFactLabel;
     private Button mShowFactButton;
@@ -43,11 +46,10 @@ public class FunFactsActivity extends Activity {
     }
 
     private void changeFact(){
+        String fact = mFactBook.get();
+        int color = mColorWheel.get();
 
-        String fact = mFactBook.getFact();
         mFactLabel.setText(fact);
-
-        int color = mColorWheel.getColor();
         mRelativeLayout.setBackgroundColor(color);
         mShowFactButton.setTextColor(color);
 
@@ -56,5 +58,8 @@ public class FunFactsActivity extends Activity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(color);
         }
+
+        //Print fact and color in logcat
+        Log.d(TAG, fact + String.format(" #%06x", (0xFFFFFF & color)));
     }
 }

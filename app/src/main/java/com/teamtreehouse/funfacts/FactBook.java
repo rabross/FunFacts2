@@ -2,9 +2,7 @@ package com.teamtreehouse.funfacts;
 
 import android.content.Context;
 
-import java.util.Random;
-
-public class FactBook {
+public class FactBook extends RandomSelector {
 
     private final String[] mFacts;
 
@@ -14,16 +12,10 @@ public class FactBook {
         mFacts = context.getResources().getStringArray(R.array.facts);
     }
 
-    // Method (abilities: things the object can do)
-    public String getFact() {
-        String fact = "";
-
+    @Override
+    public String get() {
         // Randomly select a fact
-        Random randomGenerator = new Random(); // Construct a new Random number generator
-        int randomNumber = randomGenerator.nextInt(mFacts.length);
-
-        fact = mFacts[randomNumber];
-
-        return fact;
+        // Minimised code
+        return mFacts[getRandomInt(mFacts.length)];
     }
 }
