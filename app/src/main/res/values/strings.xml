@@ -2,4 +2,29 @@
     <string name="app_name">Fun Facts</string>
     <string name="prompt">Did you know?</string>
     <string name="button">show another fact</string>
+
+    <!-- Facts -->
+    <string name="fact1">Ants stretch when they wake up in the morning.</string>
+    <string name="fact2">Ostriches can run faster than horses.</string>
+    <string name="fact3">Olympic gold medals are actually made mostly of silver.</string>
+    <string name="fact4">You are born with 300 bones; by the time you are an adult you will have 206.</string>
+    <string name="fact5">It takes about 8 minutes for light from the Sun to reach Earth.</string>
+    <string name="fact6">Some bamboo plants can grow almost a meter in just one day.</string>
+    <string name="fact7">The state of Florida is bigger than England.</string>
+    <string name="fact8">On average, it takes 66 days to form a new habit.</string>
+    <string name="fact9">Some penguins can leap 2-3 meters out of the water.</string>
+    <string name="fact10">Mammoths still walked the earth when the Great Pyramid was being built.</string>
+
+    <string-array name="facts">
+        <item>@string/fact1</item>
+        <item>@string/fact2</item>
+        <item>@string/fact3</item>
+        <item>@string/fact4</item>
+        <item>@string/fact5</item>
+        <item>@string/fact6</item>
+        <item>@string/fact7</item>
+        <item>@string/fact8</item>
+        <item>@string/fact9</item>
+        <item>@string/fact10</item>
+    </string-array>
 </resources>

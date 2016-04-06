@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Faits amusants</string>
+    <string name="fact1">Ants étirer quand ils se réveillent le matin.</string>
+    <string name="fact10">Mammouths marchait encore la terre, quand la Grande Pyramide a été construite. </string>
+    <string name="fact2">Autruches peuvent courir plus vite que les chevaux.</string>
+    <string name="fact3">médailles d\'or olympiques sont en fait la plupart du temps de l\'argent.</string>
+    <string name="fact4">Vous êtes né avec 300 os; au moment où vous êtes un adulte, vous aurez 206.</string>
+    <string name="fact5">Il faut environ 8 minutes pour la lumière du soleil pour atteindre la Terre.</string>
+    <string name="fact6">Certaines plantes de bambou peuvent atteindre près d\'un mètre en une seule journée.</string>
+    <string name="fact7">L\'état de Floride est plus grand que l\'Angleterre.</string>
+    <string name="fact8">En moyenne, il faut 66 jours pour former une nouvelle habitude.</string>
+    <string name="fact9">Certains pingouins peuvent sauter 2-3 mètres de l\'eau.</string>
+    <string name="button">montrer un autre fait</string>
+    <string name="prompt">Savais-tu?</string>
+</resources>
