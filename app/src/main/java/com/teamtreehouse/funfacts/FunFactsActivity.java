@@ -15,7 +15,7 @@ public class FunFactsActivity extends Activity {
     private Button mShowFactButton;
     private RelativeLayout mRelativeLayout;
     private FactBook mFactBook;
-    private ColorWheel mColorWheel = new ColorWheel();
+    private ColorWheel mColorWheel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class FunFactsActivity extends Activity {
         mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 
         mFactBook = new FactBook(this);
+        mColorWheel = new ColorWheel(this);
 
         //This allows us to always have a random initial fact
         changeFact();
