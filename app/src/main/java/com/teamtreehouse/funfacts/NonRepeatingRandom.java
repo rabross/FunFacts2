@@ -11,6 +11,14 @@ public class NonRepeatingRandom extends Random {
 
     private int mLastRandomInt = -1;
 
+    public int getLastRandomInt() {
+        return mLastRandomInt;
+    }
+
+    public void setLastRandomInt(int lastRandomInt) {
+        mLastRandomInt = lastRandomInt;
+    }
+
     @Override
     public int nextInt(int n) {
 
