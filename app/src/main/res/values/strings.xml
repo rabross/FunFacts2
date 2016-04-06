@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Fun Facts</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="prompt">Did you know?</string>
+    <string name="button">show another fact</string>
 </resources>

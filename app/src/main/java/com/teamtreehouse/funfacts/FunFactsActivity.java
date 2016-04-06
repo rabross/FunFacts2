@@ -26,17 +26,25 @@ public class FunFactsActivity extends Activity {
         mShowFactButton = (Button) findViewById(R.id.showFactButton);
         mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 
+        //This allows us to always have a random initial fact
+        changeFact();
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fact = mFactBook.getFact();
-                mFactLabel.setText(fact);
-
-                int color = mColorWheel.getColor();
-                mRelativeLayout.setBackgroundColor(color);
-                mShowFactButton.setTextColor(color);
+                changeFact();
             }
         };
         mShowFactButton.setOnClickListener(listener);
+    }
+
+    private void changeFact(){
+
+        String fact = mFactBook.getFact();
+        mFactLabel.setText(fact);
+
+        int color = mColorWheel.getColor();
+        mRelativeLayout.setBackgroundColor(color);
+        mShowFactButton.setTextColor(color);
     }
 }
