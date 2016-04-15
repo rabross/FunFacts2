@@ -2,20 +2,20 @@ package com.teamtreehouse.funfacts;
 
 import android.content.Context;
 
-public class ColorWheel extends RandomSelector {
+import org.apache.commons.lang3.ArrayUtils;
 
-    private final int[] mColors;
+public class ColorWheel extends NonRepeatingRandomArraySelector<Integer> {
 
-    public ColorWheel(Context context) {
-        // Colors are now stored as color resources but referred to using an int array resource
-        // so they can be randomly selected
-        mColors = context.getResources().getIntArray(R.array.colors);
+    Context mContext;
+
+    public ColorWheel (Context context) {
+        mContext = context;
     }
 
     @Override
-    public Integer get() {
-        // Randomly select a color
-        // Minimised code
-        return mColors[getRandomInt(mColors.length)];
+    public Integer[] getArray() {
+        // Colors are now stored as color resources but referred to using an int array resource
+        // so they can be randomly selected
+        return ArrayUtils.toObject(mContext.getResources().getIntArray(R.array.colors));
     }
 }

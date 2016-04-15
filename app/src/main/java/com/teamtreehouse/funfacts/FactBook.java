@@ -2,20 +2,18 @@ package com.teamtreehouse.funfacts;
 
 import android.content.Context;
 
-public class FactBook extends RandomSelector {
+public class FactBook extends NonRepeatingRandomArraySelector<String> {
 
-    private final String[] mFacts;
+    Context mContext;
 
     public FactBook(Context context) {
-        // Facts are now stored in a string array resource
-        // This allows devs to easily add new facts and also can easily provide translations
-        mFacts = context.getResources().getStringArray(R.array.facts);
+        mContext = context;
     }
 
     @Override
-    public String get() {
-        // Randomly select a fact
-        // Minimised code
-        return mFacts[getRandomInt(mFacts.length)];
+    public String[] getArray() {
+        // Facts are now stored in a string array resource
+        // This allows devs to easily add new facts and also can easily provide translations
+        return mContext.getResources().getStringArray(R.array.facts);
     }
 }

@@ -13,6 +13,8 @@ import android.widget.TextView;
 public class FunFactsActivity extends Activity {
 
     public static final String TAG = FunFactsActivity.class.getSimpleName();
+    private static final String KEY_FACT_SEED = "fact_seed";
+    private static final String KEY_COLOR_SEED = "color_seed";
 
     private TextView mFactLabel;
     private Button mShowFactButton;
@@ -34,20 +36,35 @@ public class FunFactsActivity extends Activity {
         mColorWheel = new ColorWheel(this);
 
         //This allows us to always have a random initial fact
-        changeFact();
+        if (savedInstanceState == null)
+            changeFact();
+        else {
+            changeFact(mFactBook.get(savedInstanceState.getInt(KEY_FACT_SEED)),
+                    mColorWheel.get(savedInstanceState.getInt(KEY_COLOR_SEED)));
+        }
 
-        View.OnClickListener listener = new View.OnClickListener() {
+        mShowFactButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changeFact();
             }
-        };
-        mShowFactButton.setOnClickListener(listener);
+        });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        outState.putInt(KEY_FACT_SEED, mFactBook.getLastIndex());
+        outState.putInt(KEY_COLOR_SEED, mColorWheel.getLastIndex());
+        super.onSaveInstanceState(outState);
     }
 
     private void changeFact(){
-        String fact = mFactBook.get();
-        int color = mColorWheel.get();
+        changeFact(mFactBook.get(), mColorWheel.get());
+    }
+
+    @SuppressWarnings("ResourceAsColor")
+    private void changeFact(String fact, int color) {
 
         mFactLabel.setText(fact);
         mRelativeLayout.setBackgroundColor(color);
